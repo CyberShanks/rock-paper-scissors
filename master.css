@@ -1,0 +1,79 @@
+#buttons{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
+    margin: 0;
+}
+
+#container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;  
+}
+
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+  
+/*Animation for buttons*/
+
+button {
+    width: 200px;
+    height: 200px;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
+    color: #BFC0C0;
+    /*MUST SET OVERFLOW TO HIDDEN TO HIDE SLIDE DIV WHEN ITS OUTSIDE OF THE PARENT*/
+    overflow: hidden;
+    /*MUST Set position to relative, AND MUST MENTION THIS AS PART OF BUTTON, DUE TO SPECIFICITY RULES, WILL FUCK UP IF YOU DONT MENTION HERE. Also mention the transition*/
+    position: relative;
+    transition: all .35s ease-Out;
+}
+
+/*Set position relative for non moving element and the transition*/
+img {
+    position: relative;
+    transition: all .35s ease-Out;
+  }
+ 
+  /*Set dimension 100% and make the slide div stay out of parent with left,right,up,down properties.*/ 
+.slide {
+    width: 100%;
+    height: 100%;
+    left: -200px;
+    background: #11afaf;
+    /*MUST set position to absolute*/
+    position: absolute;
+    /*mention animation transition*/
+    transition: all .35s ease-Out;
+    /*Align it correctly with parent, such that it does not align incorrectly with the non-moving element*/
+    bottom: 0;
+  }
+  
+/*The actual transition that will happen when you hover*/
+  button:hover .slide {
+    left: 0;
+  }
+
+  .pap{
+      background: #ce3232;
+  }
+
+  .sci{
+    background: #e28228;
+  }
+/*Animation Code Ends*/

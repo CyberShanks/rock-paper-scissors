@@ -78,8 +78,9 @@ function loss(player, computer) {
 function game() {
     let playerWin = 0;
     let compWin = 0;
-    while (playerWin < 5 && compWin < 5) {
-        winCount = logic(prompt('Rock, Paper, Scissors?'), computerPlay());
+    while (playerWin < 5 && compWin < 5) //logic here needs to be changed
+    {
+        //winCount = logic(prompt('Rock, Paper, Scissors?'), computerPlay());
         if (winCount == 1)
             playerWin++;
         else if (winCount == -1)
@@ -90,3 +91,16 @@ function game() {
     else alert("You lose...");
 }
 game();
+
+// //coding the hover effect for buttons
+// function transition (button){
+//     const div = document.createElement('div');
+//     div.style.width = '0';
+//     div.style.height = '100%';
+//     button.appendChild(div);
+// }
+
+// const node = document.getElementsByName('button');
+// node.forEach(but => {
+//     but.addEventListener('mouseover', transition(but));
+// });
