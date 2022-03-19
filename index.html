@@ -7,22 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="logic.js"></script>
     <link rel="stylesheet" href="./master.css">
-    <title>Game 1</title>
+    <title>RPS</title>
 </head>
 
 <body>
     <div id="container">
         <h1>Rock - Paper - Scissors</h1>
         <div id="buttons">
-            <button value="Rock">
+            <button class="button" value="Rock">
                 <div class="slide rock"></div><img src="img/fist_imp.png" width="90%">
             </button>
-            <button value="Paper">
+            <button class="button" value="Paper">
                 <div class="slide pap"></div><img src="img/paper_imp.png" width="95%">
             </button>
-            <button value="Scissors">
+            <button class="button" value="Scissors">
                 <div class="slide sci"></div><img src="img/scissors_imp.png" width="75%">
             </button>
+        </div>
+    </div>
+
+
+    <div id="modal-window" class="hideModal">
+        <div class="main-modal"> <!--Add JS eventlistener so that it closes when clicked on window-->
+            <h1>You Win!</h1>  
         </div>
     </div>
 </body>
