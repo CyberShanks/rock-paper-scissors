@@ -77,3 +77,80 @@ img {
     background: #e28228;
   }
 /*Animation Code Ends*/
+
+/*Next Step -> Add a Modal Window which will appear AFTER the user selects a choice.
+The Window will contain the users choice, the computers choice, and then display who won. Currently uses bootstrap, CHANGE THAT*/
+
+/*Adding Shadow effect to the background*/
+.shadow{
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #bbb8b8;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Actual modal window itself*/
+.main-modal{
+  width: 30%;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 5%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/*Animation using a magic class (class that is not visible initially, but is then added to elements using JS)*/
+
+/*HIDE animation is NOT WORKING*/
+.hideModal{
+  z-index: -1;
+  opacity: 0;
+  animation: hide 2s;
+  transform: scale(0);
+}
+
+@keyframes hide {
+  0%{
+    z-index: 2;
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100%{
+    z-index: -1;
+    transform: scale(0);
+    opacity: 0;
+  }
+}
+/*---------------*/
+
+
+
+.showModal{
+  z-index: 2;
+  opacity: 1;
+  animation: show .2s;
+  transform: scale(1);
+}
+
+@keyframes show {
+  0%{
+    z-index: -1;
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  100%{
+    z-index: 2;
+    transform: scale(1);
+    opacity: 1;
+  }
+}
