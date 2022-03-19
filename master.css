@@ -69,17 +69,26 @@ img {
     left: 0;
   }
 
-  .pap{
+  #Paper{
       background: #ce3232;
   }
 
-  .sci{
+  #Scissors{
     background: #e28228;
   }
 /*Animation Code Ends*/
 
-/*Next Step -> Add a Modal Window which will appear AFTER the user selects a choice.
-The Window will contain the users choice, the computers choice, and then display who won. Currently uses bootstrap, CHANGE THAT*/
+/*Next Step ->
+The Window will contain the users choice, the computers choice, and then display who won*/
+
+/*Main Modal Styling*/
+#choice-box{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:80%;
+
+}
 
 /*Adding Shadow effect to the background*/
 .shadow{
@@ -97,14 +106,16 @@ The Window will contain the users choice, the computers choice, and then display
 
 /*Actual modal window itself*/
 .main-modal{
-  width: 30%;
-  height: 300px;
+  width: 65%;
+  height: 60%/*450px*/;
   background-color: #fff;
-  border-radius: 5%;
+  border-radius: 2%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  cursor: pointer;
+  gap: 40px;
 }
 
 /*Animation using a magic class (class that is not visible initially, but is then added to elements using JS)*/
@@ -113,7 +124,8 @@ The Window will contain the users choice, the computers choice, and then display
 .hideModal{
   z-index: -1;
   opacity: 0;
-  animation: hide 2s;
+  /*Animation duration here is actually causing the modal to disapper slowly, resulting in it disappering after .25s causing layout problems*/
+  animation: hide .25s;
   transform: scale(0);
 }
 

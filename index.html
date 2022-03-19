@@ -14,22 +14,27 @@
     <div id="container">
         <h1>Rock - Paper - Scissors</h1>
         <div id="buttons">
-            <button class="button" value="Rock">
-                <div class="slide rock"></div><img src="img/fist_imp.png" width="90%">
+            <button>
+                <div class="slide" id="Rock"></div><img id="rock" src="img/fist_imp.png" width="90%">
             </button>
-            <button class="button" value="Paper">
-                <div class="slide pap"></div><img src="img/paper_imp.png" width="95%">
+            <button>
+                <div class="slide" id="Paper"></div><img id="paper" src="img/paper_imp.png" width="95%">
             </button>
-            <button class="button" value="Scissors">
-                <div class="slide sci"></div><img src="img/scissors_imp.png" width="75%">
+            <button>
+                <div class="slide" id="Scissors"></div><img id="scissors" src="img/scissors_imp.png" width="75%">
             </button>
         </div>
     </div>
 
 
     <div id="modal-window" class="hideModal">
-        <div class="main-modal"> <!--Add JS eventlistener so that it closes when clicked on window-->
-            <h1>Message</h1>  
+        <div class="main-modal">
+            <div id="choice-box">
+                <img id="player-choice" src="" width="200px" height="200px">
+                <h2>VS</h2>
+                <img id="comp-choice" src="" width="200px" height="200px">
+            </div>
+            <div id="message"><h1>Message</h1></div>  
         </div>
     </div>
 </body>
