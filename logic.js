@@ -1,20 +1,27 @@
 console.log("Connected");
 console.log("Rock-Paper-Scissors");
 
-//BUG HERE, EVENT LISTENER NOT BEING ATTACHED PROPERLY
-// const buttNodes = document.querySelectorAll("button"); //queryselector here is bugged
-// console.log(buttNodes); //maybe error here
-/*Maybe the event script is processed before the webpage loads, thus it is not able to execute as it should... maybe asynchronous loading is required here */
-
-buttNodes.forEach((button) => {
-    button.addEventListener('click', () => {
-        const modal = document.querySelector('#modal-window');
+function displayModal(){
+    const modal = document.querySelector('#modal-window');
     modal.classList.add('showModal');
     modal.classList.add('shadow');
-    });
+}
+
+//attaches eventlisteners when page loads
+const buttNodes = document.querySelectorAll("button");
+buttNodes.forEach((button) => {
+    button.addEventListener('click', displayModal);
 });
 
+function hideModal(){
+    const modal = document.querySelector('#modal-window');
+    modal.classList.remove('showModal');
+    modal.classList.remove('shadow');
+}
 
+//hides modal
+const modalNode = document.querySelector('.main-modal');
+modalNode.addEventListener('click', hideModal);
 
 // proper random function which works in a range specified by min max
 function properRandom(min, max) {
